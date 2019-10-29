@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+jupyter nbconvert --to script /autograder/submission/SQLLab.ipynb
+
+cp /autograder/submission/SQLLab.py /autograder/source/SQLLab.py
+
+cd /autograder/source
+
+python3 run_tests.py > /autograder/results/results.json
